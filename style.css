@@ -93,5 +93,5 @@ button {
 
 
 .turn {
-    border-bottom: 2px solid #0f0;
+    box-shadow: 0 5px #0f0;
 }

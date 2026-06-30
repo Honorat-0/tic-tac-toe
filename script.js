@@ -25,19 +25,20 @@ const game = (function() {
 
     
     let turn = 0;
+    
 
     const play = function(position, div) {
-            
         if(!(player2.track.includes(position) || player1.track.includes(position)) && turn <= 9) {
             if(turn%2 == 0) {
                 player1.track.push(position)
                 div.textContent = player1.pawn;
-                xTurn.classList.add("turn")
-
+                xTurn.classList.toggle("turn")
+                oTurn.classList.toggle("turn")
             } else {
                 player2.track.push(position)
                 div.textContent = player2.pawn;
-                oTurn.classList.add("turn")
+                oTurn.classList.toggle("turn")
+                xTurn.classList.toggle("turn")
             }    
 
             turn++;
@@ -49,6 +50,8 @@ const game = (function() {
 
 
     const init = function() {
+        xTurn.classList.add("turn")
+        oTurn.classList.remove("turn")
         dialog.showModal()
         turn = 0;
         player1.track  = [];
@@ -113,6 +116,7 @@ const decision = document.querySelector("dialog .decision")
 const info = document.querySelector("dialog .player")
 const xTurn = document.querySelector(".x") 
 const oTurn = document.querySelector(".o")
+
 
 cell.forEach((div, index) => div.addEventListener("click", ()=> {
     const choose = index +1;
