@@ -1,0 +1,97 @@
+:root {
+    --border: 5px solid #000;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 20px;
+}
+
+.container {
+    width: 300px;
+    display: grid;
+    grid-template: repeat(3, 100px) / repeat(3, 100px);
+    margin: auto;
+} 
+
+.cell {
+    border: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+.cell:nth-child(3n + 1) , .cell:nth-child(3n + 3) {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+
+.cell:nth-child(3n + 2) {
+   border-top: none;
+}
+
+.cell:nth-child(1n + 7) {
+    border-bottom: none;
+}
+
+.win {
+    background-color: #0f0;
+}
+
+.score p {
+    text-align: center;
+}
+.score> div {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+
+.score .o, .score .x {
+    padding: 0.1rem 1rem;
+    width: 45%;
+    border: 2px solid;
+    display: flex;
+    justify-content: space-between;
+    border-radius:0.5rem
+}
+
+dialog>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+dialog .decision, .player {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+dialog .player {
+    font-size: 4rem;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+}
+
+
+.turn {
+    border-bottom: 2px solid #0f0;
+}
